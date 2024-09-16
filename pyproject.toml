@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pykhon"
+version = "0.1.0"
+description = "Pykhon: Kubernetes Troubleshooting CLI Tool"
+authors = ["Erasmo <erasmolpa@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+kubectl-troubleshooter = "pykhon:cli"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+kubernetes = "^23.3.0"
+pytest = "^6.2"
+click = "^8.1.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
