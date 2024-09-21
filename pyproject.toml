@@ -11,8 +11,11 @@ kubectl-troubleshooter = "pykhon:cli"
 [tool.poetry.dependencies]
 python = "^3.12"
 kubernetes = "^23.3.0"
-pytest = "^6.2"
+pytest = ">=8.3.3,<9.0.0"
 click = "^8.1.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
 
 [build-system]
 requires = ["poetry-core"]

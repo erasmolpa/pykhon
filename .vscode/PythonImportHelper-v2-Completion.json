@@ -1,11 +1,19 @@
 [
     {
-        "label": "click",
+        "label": "unittest",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "click",
-        "description": "click",
-        "detail": "click",
+        "importPath": "unittest",
+        "description": "unittest",
+        "detail": "unittest",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
         "documentation": {}
     },
     {
@@ -17,12 +25,38 @@
         "documentation": {}
     },
     {
+        "label": "Troubleshooting",
+        "importPath": "troubleshooting",
+        "description": "troubleshooting",
+        "isExtraImport": true,
+        "detail": "troubleshooting",
+        "documentation": {}
+    },
+    {
+        "label": "click",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "click",
+        "description": "click",
+        "detail": "click",
+        "documentation": {}
+    },
+    {
         "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "subprocess",
         "description": "subprocess",
         "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "TestTroubleshooting",
+        "kind": 6,
+        "importPath": "tests.tes_troubleshooting",
+        "description": "tests.tes_troubleshooting",
+        "peekOfCode": "class TestTroubleshooting(unittest.TestCase):\n    @patch('troubleshooting.Troubleshooting.run_command')\n    def test_check_pod_status(self, mock_run_command):\n        # Simulamos la salida que esperamos de kubectl\n        mock_run_command.return_value = \"NAME        READY   STATUS    RESTARTS   AGE\\npod-1       1/1     Running   0          10m\"\n        ts = Troubleshooting()\n        result = ts.check_pod_status(namespace=\"default\")\n        # Verificamos que se ejecutó el comando correcto\n        mock_run_command.assert_called_once_with(\"kubectl get pods -n default -o wide\")\n        # Verificamos que el resultado sea el esperado",
+        "detail": "tests.tes_troubleshooting",
         "documentation": {}
     },
     {
