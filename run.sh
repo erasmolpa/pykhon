@@ -1,3 +1,5 @@
+#!/bin/sh
+
 poetry install
 
 poetry run kubectl-troubleshooter --help
