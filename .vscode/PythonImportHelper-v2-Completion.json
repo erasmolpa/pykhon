@@ -1,0 +1,208 @@
+[
+    {
+        "label": "click",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "click",
+        "description": "click",
+        "detail": "click",
+        "documentation": {}
+    },
+    {
+        "label": "Troubleshooting",
+        "importPath": "troubleshooting",
+        "description": "troubleshooting",
+        "isExtraImport": true,
+        "detail": "troubleshooting",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "cli",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def cli():\n    \"\"\"CLI para realizar troubleshooting de Kubernetes, Containers, Pods, Services, Networking y DNS\"\"\"\n    pass\n# Definir comandos CLI para cada función del Troubleshooting\n@cli.command()\n@click.option('--namespace', default='default', help='Namespace a consultar')\ndef check_pod_status(namespace):\n    \"\"\"Verificar el estado de los pods en un namespace\"\"\"\n    result = ts.check_pod_status(namespace)\n    click.echo(result)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_pod_status",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_pod_status(namespace):\n    \"\"\"Verificar el estado de los pods en un namespace\"\"\"\n    result = ts.check_pod_status(namespace)\n    click.echo(result)\n@cli.command()\n@click.argument('pod_name')\n@click.option('--namespace', default='default', help='Namespace del pod')\ndef describe_pod(pod_name, namespace):\n    \"\"\"Describir un pod específico\"\"\"\n    result = ts.describe_pod(pod_name, namespace)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "describe_pod",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def describe_pod(pod_name, namespace):\n    \"\"\"Describir un pod específico\"\"\"\n    result = ts.describe_pod(pod_name, namespace)\n    click.echo(result)\n@cli.command()\n@click.argument('pod_name')\n@click.option('--namespace', default='default', help='Namespace del pod')\n@click.option('--container_name', default=None, help='Nombre del contenedor (opcional)')\ndef check_container_logs(pod_name, namespace, container_name):\n    \"\"\"Ver logs de un contenedor dentro de un pod\"\"\"",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_container_logs",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_container_logs(pod_name, namespace, container_name):\n    \"\"\"Ver logs de un contenedor dentro de un pod\"\"\"\n    result = ts.check_container_logs(pod_name, namespace, container_name)\n    click.echo(result)\n@cli.command()\n@click.argument('service_name')\n@click.option('--namespace', default='default', help='Namespace del servicio')\ndef check_service(service_name, namespace):\n    \"\"\"Verificar el estado de un servicio en Kubernetes\"\"\"\n    result = ts.check_service(service_name, namespace)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_service",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_service(service_name, namespace):\n    \"\"\"Verificar el estado de un servicio en Kubernetes\"\"\"\n    result = ts.check_service(service_name, namespace)\n    click.echo(result)\n@cli.command()\n@click.option('--namespace', default='default', help='Namespace a consultar')\ndef check_deployments(namespace):\n    \"\"\"Verificar el estado de los deployments en un namespace\"\"\"\n    result = ts.check_deployments(namespace)\n    click.echo(result)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_deployments",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_deployments(namespace):\n    \"\"\"Verificar el estado de los deployments en un namespace\"\"\"\n    result = ts.check_deployments(namespace)\n    click.echo(result)\n@cli.command()\n@click.option('--namespace', default='default', help='Namespace a consultar')\ndef check_network_policy(namespace):\n    \"\"\"Verificar las políticas de red en un namespace\"\"\"\n    result = ts.check_network_policy(namespace)\n    click.echo(result)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_network_policy",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_network_policy(namespace):\n    \"\"\"Verificar las políticas de red en un namespace\"\"\"\n    result = ts.check_network_policy(namespace)\n    click.echo(result)\n@cli.command()\n@click.argument('service_name')\n@click.option('--namespace', default='default', help='Namespace del servicio')\ndef ping_service(service_name, namespace):\n    \"\"\"Hacer ping a la IP de un servicio\"\"\"\n    result = ts.ping_service(service_name, namespace)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "ping_service",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def ping_service(service_name, namespace):\n    \"\"\"Hacer ping a la IP de un servicio\"\"\"\n    result = ts.ping_service(service_name, namespace)\n    click.echo(result)\n@cli.command()\n@click.argument('pod_name')\n@click.option('--namespace', default='default', help='Namespace del pod')\ndef check_dns_resolution(pod_name, namespace):\n    \"\"\"Verificar la resolución DNS dentro de un pod\"\"\"\n    result = ts.check_dns_resolution(pod_name, namespace)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_dns_resolution",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_dns_resolution(pod_name, namespace):\n    \"\"\"Verificar la resolución DNS dentro de un pod\"\"\"\n    result = ts.check_dns_resolution(pod_name, namespace)\n    click.echo(result)\n@cli.command()\n@click.argument('pod_name')\n@click.argument('target_ip')\n@click.option('--namespace', default='default', help='Namespace del pod')\ndef check_pod_connectivity(pod_name, target_ip, namespace):\n    \"\"\"Verificar la conectividad desde un pod hacia una IP objetivo\"\"\"",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_pod_connectivity",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_pod_connectivity(pod_name, target_ip, namespace):\n    \"\"\"Verificar la conectividad desde un pod hacia una IP objetivo\"\"\"\n    result = ts.check_pod_connectivity(pod_name, target_ip, namespace)\n    click.echo(result)\n@cli.command()\ndef check_core_dns_pod_status():\n    \"\"\"Verificar el estado de los pods de CoreDNS\"\"\"\n    result = ts.check_core_dns_pod_status()\n    click.echo(result)\n@cli.command()",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_core_dns_pod_status",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_core_dns_pod_status():\n    \"\"\"Verificar el estado de los pods de CoreDNS\"\"\"\n    result = ts.check_core_dns_pod_status()\n    click.echo(result)\n@cli.command()\ndef restart_core_dns():\n    \"\"\"Reiniciar el servicio CoreDNS\"\"\"\n    result = ts.restart_core_dns()\n    click.echo(result)\n@cli.command()",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "restart_core_dns",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def restart_core_dns():\n    \"\"\"Reiniciar el servicio CoreDNS\"\"\"\n    result = ts.restart_core_dns()\n    click.echo(result)\n@cli.command()\ndef check_dns_service():\n    \"\"\"Verificar el estado del servicio DNS\"\"\"\n    result = ts.check_dns_service()\n    click.echo(result)\n@cli.command()",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_dns_service",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_dns_service():\n    \"\"\"Verificar el estado del servicio DNS\"\"\"\n    result = ts.check_dns_service()\n    click.echo(result)\n@cli.command()\n@click.argument('pod_name')\n@click.option('--namespace', default='default', help='Namespace del pod')\ndef check_container_restart_count(pod_name, namespace):\n    \"\"\"Verificar cuántas veces se ha reiniciado un contenedor\"\"\"\n    result = ts.check_container_restart_count(pod_name, namespace)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_container_restart_count",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_container_restart_count(pod_name, namespace):\n    \"\"\"Verificar cuántas veces se ha reiniciado un contenedor\"\"\"\n    result = ts.check_container_restart_count(pod_name, namespace)\n    click.echo(result)\n@cli.command()\n@click.argument('pod_name')\n@click.option('--namespace', default='default', help='Namespace del pod')\ndef check_container_status(pod_name, namespace):\n    \"\"\"Verificar el estado de los contenedores dentro de un pod\"\"\"\n    result = ts.check_container_status(pod_name, namespace)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_container_status",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_container_status(pod_name, namespace):\n    \"\"\"Verificar el estado de los contenedores dentro de un pod\"\"\"\n    result = ts.check_container_status(pod_name, namespace)\n    click.echo(result)\n@cli.command()\ndef check_cluster_nodes():\n    \"\"\"Verificar el estado de todos los nodos en el clúster\"\"\"\n    result = ts.check_cluster_nodes()\n    click.echo(result)\n@cli.command()",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_cluster_nodes",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_cluster_nodes():\n    \"\"\"Verificar el estado de todos los nodos en el clúster\"\"\"\n    result = ts.check_cluster_nodes()\n    click.echo(result)\n@cli.command()\n@click.option('--namespace', default='default', help='Namespace a consultar')\ndef check_events(namespace):\n    \"\"\"Verificar eventos recientes en un namespace\"\"\"\n    result = ts.check_events(namespace)\n    click.echo(result)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_events",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_events(namespace):\n    \"\"\"Verificar eventos recientes en un namespace\"\"\"\n    result = ts.check_events(namespace)\n    click.echo(result)\n@cli.command()\ndef check_cluster_info():\n    \"\"\"Obtener información básica del clúster de Kubernetes\"\"\"\n    result = ts.check_cluster_info()\n    click.echo(result)\nif __name__ == '__main__':",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_cluster_info",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_cluster_info():\n    \"\"\"Obtener información básica del clúster de Kubernetes\"\"\"\n    result = ts.check_cluster_info()\n    click.echo(result)\nif __name__ == '__main__':\n    cli()",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "ts",
+        "kind": 5,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "ts = Troubleshooting()\n@click.group()\ndef cli():\n    \"\"\"CLI para realizar troubleshooting de Kubernetes, Containers, Pods, Services, Networking y DNS\"\"\"\n    pass\n# Definir comandos CLI para cada función del Troubleshooting\n@cli.command()\n@click.option('--namespace', default='default', help='Namespace a consultar')\ndef check_pod_status(namespace):\n    \"\"\"Verificar el estado de los pods en un namespace\"\"\"",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "Troubleshooting",
+        "kind": 6,
+        "importPath": "troubleshooting",
+        "description": "troubleshooting",
+        "peekOfCode": "class Troubleshooting:\n    def __init__(self):\n        pass\n    def run_command(self, command):\n        \"\"\"Helper function to run shell commands.\"\"\"\n        try:\n            result = subprocess.run(command, shell=True, capture_output=True, text=True)\n            if result.returncode == 0:\n                return result.stdout\n            else:",
+        "detail": "troubleshooting",
+        "documentation": {}
+    }
+]
