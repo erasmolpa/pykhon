@@ -174,7 +174,7 @@
         "kind": 2,
         "importPath": "pykhon",
         "description": "pykhon",
-        "peekOfCode": "def check_events(namespace):\n    \"\"\"Verificar eventos recientes en un namespace\"\"\"\n    result = ts.check_events(namespace)\n    click.echo(result)\n@cli.command()\ndef check_cluster_info():\n    \"\"\"Obtener información básica del clúster de Kubernetes\"\"\"\n    result = ts.check_cluster_info()\n    click.echo(result)\nif __name__ == '__main__':",
+        "peekOfCode": "def check_events(namespace):\n    \"\"\"Verificar eventos recientes en un namespace\"\"\"\n    result = ts.check_events(namespace)\n    click.echo(result)\n@cli.command()\ndef check_cluster_info():\n    \"\"\"Obtener información básica del clúster de Kubernetes\"\"\"\n    result = ts.check_cluster_info()\n    click.echo(result)\n@cli.command()",
         "detail": "pykhon",
         "documentation": {}
     },
@@ -183,7 +183,16 @@
         "kind": 2,
         "importPath": "pykhon",
         "description": "pykhon",
-        "peekOfCode": "def check_cluster_info():\n    \"\"\"Obtener información básica del clúster de Kubernetes\"\"\"\n    result = ts.check_cluster_info()\n    click.echo(result)\nif __name__ == '__main__':\n    cli()",
+        "peekOfCode": "def check_cluster_info():\n    \"\"\"Obtener información básica del clúster de Kubernetes\"\"\"\n    result = ts.check_cluster_info()\n    click.echo(result)\n@cli.command()\n@click.option('--namespace', default='kube-system', help='Namespace a consultar')\ndef check_control_plane_nodes(namespace):\n    \"\"\"Comprobar el estado de los servicios principales en el contro plane\"\"\"\n    result = ts.check_control_plane_nodes\n    click.echo(result)",
+        "detail": "pykhon",
+        "documentation": {}
+    },
+    {
+        "label": "check_control_plane_nodes",
+        "kind": 2,
+        "importPath": "pykhon",
+        "description": "pykhon",
+        "peekOfCode": "def check_control_plane_nodes(namespace):\n    \"\"\"Comprobar el estado de los servicios principales en el contro plane\"\"\"\n    result = ts.check_control_plane_nodes\n    click.echo(result)\nif __name__ == '__main__':\n    cli()",
         "detail": "pykhon",
         "documentation": {}
     },

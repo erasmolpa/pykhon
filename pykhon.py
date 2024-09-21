@@ -151,6 +151,12 @@ def check_cluster_info():
     result = ts.check_cluster_info()
     click.echo(result)
 
-
+@cli.command()
+@click.option('--namespace', default='kube-system', help='Namespace a consultar')
+def check_control_plane_nodes(namespace):
+    """Comprobar el estado de los servicios principales en el contro plane"""
+    result = ts.check_control_plane_nodes
+    click.echo(result)
+    
 if __name__ == '__main__':
     cli()

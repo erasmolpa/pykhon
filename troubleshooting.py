@@ -110,13 +110,12 @@ class Troubleshooting:
         command = "kubectl cluster-info"
         return self.run_command(command)
     
-    def check_control_plane_nodes(self):
+    def check_control_plane_nodes(self, namespace="kube-system"):
         components = ["kube-apiserver", "kube-controller", "kube-scheduler"]
-        control_plane_namespace = "kube-system"
         output = ""
         for component in components:
             output += f"checking {component}...\n"
-            pod_command = f"kubectl get pods -n {control_plane_namespace} -l component={component}"
+            pod_command = f"kubectl get pods -n {namespace} -l component={component}"
             pod_command_output = self.run_command(pod_command)
             output += f"Pod for {component}:\n{pod_command_output}\n"
         return output
